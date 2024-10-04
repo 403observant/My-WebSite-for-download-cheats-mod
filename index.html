@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cheats mod!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://wallpaperaccess.com/full/37479.jpg') no-repeat center center/cover;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            overflow: hidden; 
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .wrapper {
+            position: relative;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+            transform: translateY(100%);
+            animation: slideIn 0.6s forwards; 
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00bfff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            margin: 15px 0;
+            font-size: 20px;
+            position: relative;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background: rgba(0, 191, 255, 0.4);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <h2>↓ㅤㅤSelectㅤㅤ↓</h2>
+        <ul>
+            <li onclick="downloadFile('Mods.rar')">My build [No cheats]</li>
+            <li onclick="downloadFile('ShulkerTooltip-1.12-1.16.5_2_2.jar')">🔞    My Hitbox    🔞 
+                [UNDETECTED]</li>
+        </ul>
+        </ul> 
+        <div class="footer">
+            WebSite by @Storon1k<br>
+            <a href="https://github.com/Ezo4kaXD" target="_blank" style="color: #00bfff;">https://github.com/Ezo4kaXD</a>
+        </div>
+    </div>
+
+    <script>
+        function downloadFile(filename) {
+            const link = document.createElement('a');
+            link.href = filename; 
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
